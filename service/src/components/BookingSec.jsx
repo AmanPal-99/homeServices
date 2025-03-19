@@ -29,7 +29,7 @@ function BookingSec({ children }) {
     const fetchBookedSlots = async () => {
         try {
             const response = await axios.get(`http://localhost:5000/api/bookings/booked-slots/${id}`);
-            console.log("Fetched Booked Slots:", response.data);
+           
 
             const bookedData = response.data;
             if (!bookedData || typeof bookedData !== "object" || Array.isArray(bookedData)) {
