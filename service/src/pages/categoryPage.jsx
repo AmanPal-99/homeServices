@@ -7,6 +7,7 @@ import categories from '@/data/categories.json';
 import { motion } from 'framer-motion';
 
 function CategoryBusinessPage() {
+    
     const { category: urlCategory } = useParams();
     const navigate = useNavigate();
     const [businesses, setBusinesses] = useState([]);
