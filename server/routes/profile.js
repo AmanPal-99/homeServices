@@ -105,7 +105,7 @@ router.put("/:id", async (req, res) => {
 });
 
 
-// ✅ CANCEL BOOKING
+
 router.delete("/booking/:id", async (req, res) => {
     try {
         const bookingId = req.params.id;
@@ -121,7 +121,7 @@ router.delete("/booking/:id", async (req, res) => {
 });
 
 
-// ✅ COMPLETE BOOKING
+
 router.put("/booking/:id", async (req, res) => {
     try {
         const bookingId = req.params.id;
@@ -139,7 +139,7 @@ router.put("/booking/:id", async (req, res) => {
 });
 
 
-// ✅ UPLOAD PROFILE IMAGE (Cloudinary)
+
 router.post("/:id/upload-profile-image", upload.single("imageUrl"), async (req, res) => {
     try {
         const { id } = req.params;
@@ -163,7 +163,6 @@ router.post("/:id/upload-profile-image", upload.single("imageUrl"), async (req, 
 });
 
 
-// ✅ REMOVE PROFILE IMAGE (Cloudinary)
 router.delete("/:id/remove-profile-image", async (req, res) => {
     try {
         const { id } = req.params;
@@ -185,7 +184,7 @@ router.delete("/:id/remove-profile-image", async (req, res) => {
 });
 
 
-// ✅ UPLOAD GALLERY IMAGE (Cloudinary)
+
 router.post("/:id/upload-gallery-image", upload.single("gallery"), async (req, res) => {
     try {
         const { id } = req.params;
@@ -209,7 +208,6 @@ router.post("/:id/upload-gallery-image", upload.single("gallery"), async (req, r
 });
 
 
-// ✅ REMOVE GALLERY IMAGE (Cloudinary)
 router.delete("/:id/remove-image", async (req, res) => {
     try {
         const { id } = req.params;
