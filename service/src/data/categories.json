@@ -1,0 +1,39 @@
+{
+    "categories":[
+        {
+            "id":1,
+            "name":"Cleaning",
+            "icon":{"url":"/004-mop.png"}
+
+        },
+        {
+            "id":2,
+            "name":"Repair",
+            "icon":{"url":"/006-wrench.png"}
+
+        },
+        {
+            "id":3,
+            "name":"Painting",
+            "icon":{"url":"/002-paint-roller.png"}
+
+        },
+        {
+            "id":4,
+            "name":"Shifting",
+            "icon":{"url":"/007-delivery-truck.png"}
+
+        },
+        {
+            "id":5,
+            "name":"Plumbing",
+            "icon":{"url":"/wrench.png"}
+
+        },
+        {
+            "id":6,
+            "name":"Electric",
+            "icon":{"url":"/001-electrical-energy.png"}
+        }
+    ]
+}
