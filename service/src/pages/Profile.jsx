@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
