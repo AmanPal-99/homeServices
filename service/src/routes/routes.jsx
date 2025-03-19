@@ -5,7 +5,7 @@ import { loginSuccess } from "../redux/authSlice";
 import Layout from "../layout";
 import Home from "../pages/Home";
 import Auth from "../pages/Auth";
-import CategoryPage from "../pages/CategoryPage";
+import CategoryPage from "../pages/egoryPage";
 import BusinessDetails from "../pages/BusinessDetails";
 import ProtectedRoute from "./ProtectedRoute";
 import Profile from '../pages/Profile';
