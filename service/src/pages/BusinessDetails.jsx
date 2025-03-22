@@ -62,7 +62,7 @@ const BusinessDetails = () => {
                 </motion.div>
             </div>
 
-            <div className="mt-10 px-32">
+            <div className="mt-10 lg:px-32 md:px-16 ">
                 <h2 className="text-3xl font-bold">Location</h2>
                 {userId && businessId && <MapView userId={userId} businessId={businessId} />}
             </div>

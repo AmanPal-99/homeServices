@@ -54,8 +54,8 @@ const MapView = ({ userId, businessId }) => {
     }
 
     return (
-        <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200 -z-50">
-            <MapContainer center={route.center} zoom={13} style={{ height: "400px", width: "100%" }} className="rounded-xl">
+        <div className="rounded-xl overflow-hidden shadow-lg min-w-[260px] border border-gray-200 -z-50">
+            <MapContainer center={route.center} zoom={13} style={{ width: "100%" }} className="rounded-xl h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]">
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

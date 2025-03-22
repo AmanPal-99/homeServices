@@ -200,28 +200,29 @@ export default function Profile() {
     };
 
     return (
-        <div className="min-h-screen p-6  flex flex-col">
-            <div className="container mx-auto">
+        <div className="px-2 py-6 flex flex-col justify-center items-center gap-6">
+          
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-8 text-center "
+                    className="mb-8 text-center  "
                 >
                     <h1 className="text-4xl font-extrabold text-primary">My Profile</h1>
                 </motion.div>
+
                 {profile ? (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="grid grid-cols-1 md:grid-cols-2 px-48 gap-6"
+                        className="grid grid-cols-1 md:grid-cols-2 gap-6"
                     >
 
                         {/* Profile Card */}
                         <div className="bg-white shadow-xl rounded-2xl border-2 border-primary py-4 px-6 flex flex-col 
                                 bg-gradient-to-br from-purple-200 via-purple-100 to-purple-50
-                                h-[550px] overflow-hidden overflow-y-auto scrollbar-hide"
+                                max-h-[550px] overflow-hidden  overflow-y-auto scrollbar-hide"
                         >
 
                             {editing ? (
@@ -230,7 +231,7 @@ export default function Profile() {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.3 }}
-                                    className="flex flex-col space-y-4"
+                                    className="flex flex-col  space-y-4"
                                 >
                                     <h2 className="text-3xl font-bold text-center mb-4 text-primary">Edit Profile</h2>
                                     <div className="flex flex-col items-center space-y-3">
@@ -360,7 +361,7 @@ export default function Profile() {
                                     </div>
                                 </motion.div>
                             ) : (
-                                <>
+                                <div className="flex flex-col items-center h-full">
                                     <div className="flex justify-center">
                                         {profile.imageUrl ? (
                                             <Image
@@ -405,7 +406,7 @@ export default function Profile() {
                                             )}
                                         </div>
                                     </div>
-                                    <div className="flex justify-center mt-4 space-x-4">
+                                    <div className="flex justify-center space-x-4 mt-3">
                                         <Button
                                             onClick={() => setEditing(true)}
                                             className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md transition-colors"
@@ -419,14 +420,14 @@ export default function Profile() {
                                             Logout
                                         </Button>
                                     </div>
-                                </>
+                                </div>
                             )}
                         </div>
 
 
                         {/* Bookings Card */}
                         <div className="bg-white shadow-xl rounded-2xl p-6 flex flex-col bg-gradient-to-r border-2 border-primary
-                            from-purple-200 via-purple-100 to-purple-50 h-[550px] overflow-y-auto"
+                            from-purple-200 via-purple-100  to-purple-50 max-h-[550px]  overflow-y-auto"
                         >
 
                             <h2 className="text-2xl font-bold text-primary mb-4">
@@ -494,7 +495,7 @@ export default function Profile() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.4 }}
                                 className="bg-white shadow-xl rounded-2xl border-2 border-primary p-6 flex flex-col items-center w-full
-                                bg-gradient-to-r from-purple-200 via-purple-100 to-purple-50  col-span-2 "
+                                bg-gradient-to-r from-purple-200 min-w-[350px] via-purple-100 to-purple-50  col-span-2 "
                             >
                                 <h2 className="text-3xl font-bold text-primary mb-4">Business Gallery</h2>
                                 <div className="mb-4">
@@ -542,7 +543,6 @@ export default function Profile() {
                 ) : (
                     <p className="text-center text-gray-500">Loading...</p>
                 )}
-            </div>
         </div >
     );
 }
