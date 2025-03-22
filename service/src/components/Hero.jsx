@@ -11,7 +11,7 @@ function Hero() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/businesses")
+        axios.get("https://homeservices-production.up.railway.app/api/businesses")
             .then(res => setBusinesses(res.data))
             .catch(err => console.error('Error fetching businesses:', err));
     }, []);

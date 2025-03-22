@@ -28,7 +28,7 @@ function BookingSec({ children }) {
     
     const fetchBookedSlots = async () => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/bookings/booked-slots/${id}`);
+            const response = await axios.get(`https://homeservices-production.up.railway.app/api/bookings/booked-slots/${id}`);
            
 
             const bookedData = response.data;
@@ -100,7 +100,7 @@ function BookingSec({ children }) {
                 status: "Booked",
             };
     
-            await axios.post("http://localhost:5000/api/bookings", formData, {
+            await axios.post("https://homeservices-production.up.railway.app/api/bookings", formData, {
                 headers: { "Content-Type": "application/json" },
             });
 

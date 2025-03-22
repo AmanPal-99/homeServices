@@ -9,7 +9,7 @@ function BusinessList() {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     useEffect(() => {
-        axios.get("http://localhost:5000/api/businesses")
+        axios.get("https://homeservices-production.up.railway.app/api/businesses")
             .then(res => {
                 setBusinesses(res.data);
                 setLoading(false);

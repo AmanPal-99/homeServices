@@ -33,7 +33,7 @@ export default function Profile() {
 
     const fetchProfile = async () => {
         try {
-            const res = await axios.get(`http://localhost:5000/api/profile/${id}`);
+            const res = await axios.get(`https://homeservices-production.up.railway.app/api/profile/${id}`);
             setProfile(res.data.profile);
             setFormData(res.data.profile);
             setGalleryImages(res.data.profile?.gallery || []);
@@ -62,7 +62,7 @@ export default function Profile() {
                 updateData.newPassword = newPassword;
             }
 
-            const response = await axios.put(`http://localhost:5000/api/profile/${id}`, updateData);
+            const response = await axios.put(`https://homeservices-production.up.railway.app/api/profile/${id}`, updateData);
 
             if (response.status === 200) {
                 setProfile(response.data.updatedProfile);
@@ -83,7 +83,7 @@ export default function Profile() {
 
     const cancelBooking = async (bookingId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/profile/booking/${bookingId}`);
+            await axios.delete(`https://homeservices-production.up.railway.app/api/profile/booking/${bookingId}`);
             fetchProfile();
             toast.success("Booking canceled.");
         } catch (err) {
@@ -94,7 +94,7 @@ export default function Profile() {
 
     const completeBooking = async (bookingId) => {
         try {
-            await axios.put(`http://localhost:5000/api/profile/booking/${bookingId}`);
+            await axios.put(`https://homeservices-production.up.railway.app/api/profile/booking/${bookingId}`);
             fetchProfile();
             toast.success("Booking marked as completed.");
         } catch (err) {
@@ -117,7 +117,7 @@ export default function Profile() {
 
         try {
             const res = await axios.post(
-                `http://localhost:5000/api/profile/${id}/upload-gallery-image`,
+                `https://homeservices-production.up.railway.app/api/profile/${id}/upload-gallery-image`,
                 formData,
                 { headers: { "Content-Type": "multipart/form-data" } }
             );
@@ -135,7 +135,7 @@ export default function Profile() {
 
     const removeImage = async (imageUrl) => {
         try {
-            await axios.delete(`http://localhost:5000/api/profile/${id}/remove-image`, {
+            await axios.delete(`https://homeservices-production.up.railway.app/api/profile/${id}/remove-image`, {
                 data: { imageUrl },
             });
 
@@ -162,7 +162,7 @@ export default function Profile() {
 
         try {
             const res = await axios.post(
-                `http://localhost:5000/api/profile/${id}/upload-profile-image`,
+                `https://homeservices-production.up.railway.app/api/profile/${id}/upload-profile-image`,
                 formData,
                 { headers: { "Content-Type": "multipart/form-data" } }
             );
@@ -183,7 +183,7 @@ export default function Profile() {
 
     const handleRemoveProfileImage = async () => {
         try {
-            const res = await axios.delete(`http://localhost:5000/api/profile/${id}/remove-profile-image`);
+            const res = await axios.delete(`https://homeservices-production.up.railway.app/api/profile/${id}/remove-profile-image`);
 
             if (res.status === 200) {
                 setFormData((prevData) => ({

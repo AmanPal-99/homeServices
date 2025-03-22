@@ -50,7 +50,7 @@ export default function Auth() {
             dataToSend.append("userName", formData.userName);
         }
         try {
-            const response = await fetch("http://localhost:5000/auth", {
+            const response = await fetch("https://homeservices-production.up.railway.app/auth", {
                 method: "POST",
                 body: dataToSend
             });

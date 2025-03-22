@@ -14,7 +14,7 @@ function Suggestions({ business }) {
     const [filteredBusinesses, setFilteredBusinesses] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/businesses")
+        axios.get("https://homeservices-production.up.railway.app/api/businesses")
             .then(res => {
                 setBusinesses(res.data);
             })

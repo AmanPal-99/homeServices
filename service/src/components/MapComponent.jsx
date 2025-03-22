@@ -24,7 +24,7 @@ const MapView = ({ userId, businessId }) => {
     useEffect(() => {
         const fetchRoute = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/map/route/${userId}/${businessId}`);
+                const response = await axios.get(`https://homeservices-production.up.railway.app/api/map/route/${userId}/${businessId}`);
                 setRoute(response.data);
             } catch (err) {
                 setError("Failed to load your route");
