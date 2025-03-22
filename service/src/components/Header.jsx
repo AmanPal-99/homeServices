@@ -23,7 +23,6 @@ function Header() {
 
   return (
     <div className="px-5 py-2 shadow-md rounded-md flex justify-between items-center bg-[#eddcfe] ">
-      
       <div className="flex items-center gap-8">
         <Link to="/">
           <Image src="/logoipsum-361.svg" alt="logo" width={50} height={50} />

@@ -50,7 +50,7 @@ function Hero() {
 
             {/* Search Box */}
             <div className="relative w-full max-w-md mt-4 z-50 ">
-                <div className="flex items-center bg-white shadow-lg rounded-full px-4 py-2 transition-all duration-300 border-2 border-transparent focus-within:border-primary">
+                <div className="flex items-center bg-white border-gray-100 shadow-lg rounded-full px-4 py-2 transition-all duration-300 border-2 border-transparent focus-within:border-primary">
                     <Search className="h-5 w-5 text-gray-500 mr-2" />
                     <input 
                         type="search" 

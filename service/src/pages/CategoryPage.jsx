@@ -41,7 +41,7 @@ function CategoryBusinessPage() {
 
     const handleCategoryClick = (categoryName) => {
         setSelectedCategory(categoryName);
-        navigate(`/category/${categoryName}`);
+        navigate(`/category/${categoryName}`,{ replace: true });
     };
 
 
