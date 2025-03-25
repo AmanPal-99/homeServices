@@ -185,15 +185,14 @@ function BookingSec({ children }) {
                     {/* ✅ Confirm Booking */}
                     <SheetFooter className="flex justify-end mt-1">
                         <SheetClose asChild>
-                            <div className="flex gap-5">
+                           
                                 <Button
-                                    className="bg-primary text-white px-4"
+                                    className="bg-primary sm:text-s text-white px-4"
                                     disabled={!(selectedTime && date)}
                                     onClick={saveBooking}
                                 >
                                     Book
                                 </Button>
-                            </div>
                         </SheetClose>
                     </SheetFooter>
                 </SheetContent>
