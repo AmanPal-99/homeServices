@@ -5,6 +5,7 @@ import { Image } from '@unpic/react';
 import { Button } from '@/components/ui/Button';
 import categories from '@/data/categories.json';
 import { motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 function CategoryBusinessPage() {
     
@@ -44,6 +45,14 @@ function CategoryBusinessPage() {
         navigate(`/category/${categoryName}`,{ replace: true });
     };
 
+    const [closeSideNav,setSideNav] = useState(true);
+
+    const handleClick = ()=>{
+        setSideNav(!closeSideNav);
+    }
+
+    
+
 
     return (
         <div className="flex px-0">
@@ -52,9 +61,14 @@ function CategoryBusinessPage() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="md:w-1/5 sm:w-1/10 border-r p-4 sticky top-16 h-screen overflow-auto shadow-lg bg-gray-50"
-            >
-                <h2 className="font-bold text-xl mb-4 text-gray-800">Categories</h2>
+                className={`md:w-1/5 sm:w-1/10 border-r p-4 sticky top-16 h-screen overflow-auto shadow-lg bg-gray-50 ${!closeSideNav&&'hidden'}`}
+            >   
+
+                <div className={`flex justify-between items-center mb-4 `}>
+                    <h2 className="font-bold text-2xl  text-gray-800">Categories</h2>
+                    <button className={`rounded-full h-fit p-1 bg-primary  scale-75 hover:bg-red-600`} onClick={handleClick}><X className='text-white ' /></button>
+                </div>
+                
                 <ul className="space-y-2">
                     {categories.categories.map((category) => (
                         <motion.li
@@ -71,12 +85,16 @@ function CategoryBusinessPage() {
             </motion.div>
 
             {/* Business Grid */}
-            <div className="flex-1 px-6 ">
-                <h2 className="font-bold text-2xl text-gray-800 mb-6 mt-3">{selectedCategory} Businesses</h2>
 
+            <div className="flex-1 px-6 ">
+                <div className='flex items-center mt-6 mb-3 gap-2'>
+                    <button className={`${closeSideNav&&'hidden'}`} onClick={handleClick} ><Menu /> </button>
+                    <h2 className="font-bold text-2xl text-gray-800">{selectedCategory} Businesses</h2>
+                </div>
+                
                 {loading ? (
                     <motion.div
-                        className="flex justify-center items-center h-64"
+                        className="flex justify-center items-center h-64 "
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8 }}
@@ -86,8 +104,9 @@ function CategoryBusinessPage() {
                 ) : filteredBusinesses.length === 0 ? (
                     <p className="text-center text-gray-500">No businesses found.</p>
                 ) : (
+
                     <motion.div
-                        className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6"
+                        className={`grid grid-cols-1 md:grid-cols-2 ${!closeSideNav&&'pl-8'} lg:grid-cols-4 gap-6`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5 }}
@@ -111,7 +130,6 @@ function CategoryBusinessPage() {
                                     <h2 className="text-2xl font-semibold text-gray-900 my-1 mx-1">{business.name}</h2>
                                     <p className="text-gray-500 text-sm mx-1">{business.address}</p>
 
-
                                     <div className="mt-2 ">
                                         <Button className="w-full  bg-primary text-white py-2 px-4 rounded-lg font-medium shadow-md hover:bg-opacity-90 transition-all
                                         " onClick={() => navigate(`/details/${business._id}`)}>
@@ -120,6 +138,7 @@ function CategoryBusinessPage() {
                                     </div>
                                 </div>
                             </motion.div>
+
                         ))}
                     </motion.div>
                 )}
