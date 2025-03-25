@@ -126,7 +126,7 @@ function BookingSec({ children }) {
                 <SheetContent  className="z-[9999]" >
                     <SheetHeader>
                         <SheetTitle className="text-lg text-left">Book Service</SheetTitle>
-                        <SheetDescription>Pick a date and time to book your appointment.</SheetDescription>
+                        <SheetDescription className='hidden md:block'>Pick a date and time to book your appointment.</SheetDescription>
                     </SheetHeader>
 
                     {/* ✅ Select Date */}
