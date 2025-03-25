@@ -61,11 +61,11 @@ function CategoryBusinessPage() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className={`md:w-1/5 sm:w-1/10 border-r p-4 sticky top-16 h-screen overflow-auto shadow-lg bg-gray-50 ${!closeSideNav&&'hidden'}`}
+                className={`md:w-1/5 sm:w-1/10 border-r   p-2 md:p-4 sticky top-16 h-screen overflow-auto shadow-lg bg-gray-50 ${!closeSideNav&&'hidden'}`}
             >   
 
                 <div className={`flex justify-between items-center mb-4 `}>
-                    <h2 className="font-bold text-2xl  text-gray-800">Categories</h2>
+                    <h2 className="font-bold text-xl  text-gray-800">Categories</h2>
                     <button className={`rounded-full h-fit p-1 bg-primary  scale-75 hover:bg-red-600`} onClick={handleClick}><X className='text-white ' /></button>
                 </div>
                 
@@ -87,11 +87,12 @@ function CategoryBusinessPage() {
             {/* Business Grid */}
 
             <div className="flex-1 px-6 ">
+
                 <div className='flex items-center mt-6 mb-3 gap-2'>
                     <button className={`${closeSideNav&&'hidden'}`} onClick={handleClick} ><Menu /> </button>
                     <h2 className="font-bold text-2xl text-gray-800">{selectedCategory} Businesses</h2>
                 </div>
-                
+
                 {loading ? (
                     <motion.div
                         className="flex justify-center items-center h-64 "
