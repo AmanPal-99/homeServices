@@ -162,7 +162,7 @@ export default function Profile() {
 
         try {
             const res = await axios.post(
-                `https://homeservices-production.up.railway.app/api/profile/${id}/upload-profile-image`,
+                `https://homeservices-prry.onrender.com/api/profile/${id}/upload-profile-image`,
                 formData,
                 { headers: { "Content-Type": "multipart/form-data" } }
             );

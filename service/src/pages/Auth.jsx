@@ -50,7 +50,7 @@ export default function Auth() {
             dataToSend.append("userName", formData.userName);
         }
         try {
-            const response = await fetch("https://homeservices-production.up.railway.app/auth", {
+            const response = await fetch("https://homeservices-prry.onrender.com/auth", {
                 method: "POST",
                 body: dataToSend
             });

@@ -20,7 +20,7 @@ const BusinessDetails = () => {
     useEffect(() => {
         const fetchBusiness = async () => {
             try {
-                const response = await axios.get(`https://homeservices-production.up.railway.app/api/businesses/${businessId}`);
+                const response = await axios.get(`https://homeservices-prry.onrender.com/api/businesses/${businessId}`);
                 setBusiness(response.data);
             } catch (err) {
                 setError("Business not found");

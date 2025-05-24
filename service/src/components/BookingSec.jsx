@@ -28,7 +28,7 @@ function BookingSec({ children }) {
     
     const fetchBookedSlots = async () => {
         try {
-            const response = await axios.get(`https://homeservices-production.up.railway.app/api/bookings/booked-slots/${id}`);
+            const response = await axios.get(`https://homeservices-prry.onrender.com/api/bookings/booked-slots/${id}`);
            
 
             const bookedData = response.data;

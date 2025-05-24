@@ -9,7 +9,7 @@ function BusinessList() {
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     useEffect(() => {
-        axios.get("https://homeservices-production.up.railway.app/api/businesses")
+        axios.get("https://homeservices-prry.onrender.com/api/businesses")
             .then(res => {
                 setBusinesses(res.data);
                 setLoading(false);
