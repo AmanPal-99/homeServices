@@ -190,7 +190,7 @@ router.post("/:id/upload-gallery-image", upload.single("gallery"), async (req, r
         const { id } = req.params;
         if (!req.file) return res.status(400).json({ message: "No image uploaded" });
 
-        const imageUrl = req.file.path; // Cloudinary URL
+        const imageUrl = req.file.path; 
 
         let updatedProfile = await Business.findByIdAndUpdate(
             id,

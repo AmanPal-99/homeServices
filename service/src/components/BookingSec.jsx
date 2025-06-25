@@ -59,7 +59,7 @@ function BookingSec({ children }) {
         const slots = [];
         let hour = 9;
         let minute = 0;
-        while (hour < 18 || (hour === 18 && minute === 0)) {
+        while (hour < 18 || (hour === 18 && minute <= 30)) {
             const formattedTime = `${hour % 12 === 0 ? 12 : hour % 12}:${minute === 0 ? "00" : minute} ${hour < 12 ? "AM" : "PM"}`;
             slots.push(formattedTime);
             minute += 30;

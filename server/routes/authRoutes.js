@@ -9,7 +9,6 @@ import multer from "multer";
 dotenv.config();
 const router = express.Router();
 
-// Configure multer to handle FormData (without files)
 const upload = multer().none();
 
 // Generate JWT Token
