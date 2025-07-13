@@ -20,7 +20,7 @@ const storage = new CloudinaryStorage({
 const upload = multer({ storage });
 
 
-// ✅ GET PROFILE & BOOKINGS
+
 router.get("/:id", async (req, res) => {
     try {
         const userId = req.params.id.trim();
@@ -55,7 +55,7 @@ router.get("/:id", async (req, res) => {
 });
 
 
-// ✅ UPDATE PROFILE (With Password Check)
+
 router.put("/:id", async (req, res) => {
     try {
         const userId = req.params.id;
@@ -145,7 +145,7 @@ router.post("/:id/upload-profile-image", upload.single("imageUrl"), async (req, 
         const { id } = req.params;
         if (!req.file) return res.status(400).json({ message: "No file uploaded" });
 
-        const imageUrl = req.file.path; // Cloudinary URL
+        const imageUrl = req.file.path; 
 
         let updatedProfile = await Business.findByIdAndUpdate(
             id,

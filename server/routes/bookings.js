@@ -8,7 +8,6 @@ router.get("/booked-slots/:businessId", async (req, res) => {
         const { businessId } = req.params;
         const bookings = await Booking.find({ business: businessId });
 
-       
         const bookedSlots = {};
         bookings.forEach(({ date, time, _id }) => {
             if (!bookedSlots[date]) {

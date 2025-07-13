@@ -8,8 +8,7 @@ import { Image } from "@unpic/react";
 export default function Auth() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-
+    
     const [isFlipped, setIsFlipped] = useState(false);
     const [isBusiness, setIsBusiness] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");

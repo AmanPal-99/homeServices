@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
       {},
       "name imageUrl category address email"
     );
-   
+
     res.json(businesses);
   } catch (error) {
     res.status(500).json({ message: "Server error", error });

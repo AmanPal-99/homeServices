@@ -11,12 +11,11 @@ const router = express.Router();
 
 const upload = multer().none();
 
-// Generate JWT Token
 const generateToken = (id, role) => {
     return jwt.sign({ id, role }, process.env.JWT_SECRET, { expiresIn: "7d" });
 };
 
-// Send Token Response
+
 const sendTokenResponse = (res, token, user, role) => {
     res.cookie("token", token, {
         httpOnly: true,
@@ -31,11 +30,10 @@ const sendTokenResponse = (res, token, user, role) => {
     });
 };
 
-// Login or Signup Route
+
+
 router.post("/", upload, async (req, res) => {
     try {
-       
-        
         const {
             email,
             password,
